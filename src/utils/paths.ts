@@ -4,7 +4,7 @@ import * as vscode from 'vscode';
 
 export function getEffectiveHome(): string {
   const configuration = vscode.workspace.getConfiguration('vsmodelswitch');
-  const target = configuration.get<string>('configTarget', 'sandbox');
+  const target = configuration.get<string>('configTarget', 'real');
   if (target === 'real') {
     return os.homedir();
   }

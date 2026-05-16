@@ -19,34 +19,35 @@ VSModelSwitch is a VSCode extension for managing Claude Code and Codex providers
 - Sync provider metadata with VSCode account sync
 - Show `Key missing` and `Set Key` for synced providers without local secrets
 - Import and export public config without secrets
-- Write to a sandbox config home by default, avoiding accidental changes to real `~/.claude` and `~/.codex`
+- Write the active provider to real Claude Code and Codex config files by default
+- Optional sandbox mode for safe testing
 
 ## Supported Tools
 
 - Claude Code
 - Codex
 
-## Safe Defaults
+## Config Writes
 
-During development, VSModelSwitch writes CLI config files into a sandbox home by default:
-
-```text
-<workspace>/.vsmodelswitch-home
-```
-
-It does not touch real machine config files by default:
+By default, VSModelSwitch writes active providers to your real machine config files:
 
 ```text
 ~/.claude/settings.json
 ~/.codex/config.toml
 ```
 
-To write real machine config, explicitly set:
+For safe testing, switch to sandbox mode:
 
 ```json
 {
-  "vsmodelswitch.configTarget": "real"
+  "vsmodelswitch.configTarget": "sandbox"
 }
+```
+
+Sandbox mode writes to:
+
+```text
+<workspace>/.vsmodelswitch-home
 ```
 
 ## Local Development
@@ -100,7 +101,7 @@ test-key
 ```json
 {
   "vsmodelswitch.globalCliSync": true,
-  "vsmodelswitch.configTarget": "sandbox",
+  "vsmodelswitch.configTarget": "real",
   "vsmodelswitch.testHome": "",
   "vsmodelswitch.anthropicVersion": "2023-06-01"
 }

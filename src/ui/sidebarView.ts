@@ -434,7 +434,7 @@ export class SidebarViewProvider implements vscode.WebviewViewProvider, vscode.D
       currentProviderIds: {},
       status: { kind: 'off' },
       globalCliSync: true,
-      configTarget: 'sandbox',
+      configTarget: 'real',
       configPaths: { claude: '', codex: '' }
     };
     let busy = false;

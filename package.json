@@ -114,7 +114,7 @@
         "vsmodelswitch.globalCliSync": {
           "type": "boolean",
           "default": true,
-          "description": "Write the active provider into Claude Code and Codex config files. Enabled by default, but writes to sandbox unless vsmodelswitch.configTarget is real."
+          "description": "Write the active provider into Claude Code and Codex config files. Enabled by default."
         },
         "vsmodelswitch.configTarget": {
           "type": "string",
@@ -122,8 +122,8 @@
             "sandbox",
             "real"
           ],
-          "default": "sandbox",
-          "description": "Choose where config writes go. sandbox writes to a local test home; real writes to your actual home directory."
+          "default": "real",
+          "description": "Choose where config writes go. real writes to your actual home directory; sandbox writes to a local test home."
         },
         "vsmodelswitch.testHome": {
           "type": "string",

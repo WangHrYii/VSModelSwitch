@@ -19,34 +19,35 @@ VSModelSwitch 是一个 VSCode 插件，用来在 VSCode 内管理 Claude Code �
 - provider 元数据支持 VSCode 账号同步
 - 同步到新机器后显示 `Key missing`，可用 `Set Key` 补本机 key
 - 支持不含密钥的 public config 导入/导出
-- 默认写入 sandbox 配置目录，不会误改真实 `~/.claude` / `~/.codex`
+- 默认写入真实 Claude Code 和 Codex 配置文件
+- 提供 sandbox 模式用于安全测试
 
 ## 当前支持
 
 - Claude Code
 - Codex
 
-## 安全默认值
+## 配置写入
 
-开发阶段默认写入 sandbox：
-
-```text
-<workspace>/.vsmodelswitch-home
-```
-
-默认不会修改真实配置：
+默认情况下，VSModelSwitch 会把当前 provider 写入真实本机配置：
 
 ```text
 ~/.claude/settings.json
 ~/.codex/config.toml
 ```
 
-只有显式设置后才会写真实配置：
+如果需要安全测试，可以切换到 sandbox：
 
 ```json
 {
-  "vsmodelswitch.configTarget": "real"
+  "vsmodelswitch.configTarget": "sandbox"
 }
+```
+
+sandbox 会写到：
+
+```text
+<workspace>/.vsmodelswitch-home
 ```
 
 ## 本地开发
@@ -108,7 +109,7 @@ vsmodelswitch-0.0.1.vsix
 ```json
 {
   "vsmodelswitch.globalCliSync": true,
-  "vsmodelswitch.configTarget": "sandbox",
+  "vsmodelswitch.configTarget": "real",
   "vsmodelswitch.testHome": "",
   "vsmodelswitch.anthropicVersion": "2023-06-01"
 }

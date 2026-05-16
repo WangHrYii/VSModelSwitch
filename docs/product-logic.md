@@ -191,7 +191,7 @@ Use Provider
   -> 设置该工具当前 provider
   -> 从 SecretStorage 读取 key
   -> 更新 VSCode terminal environmentVariableCollection
-  -> 默认写入 sandbox CLI 配置文件
+  -> 默认写入真实 CLI 配置文件
   -> 更新状态栏
   -> 提示重启已有 Claude/Codex terminal
 ```
@@ -209,7 +209,7 @@ Use Provider
 
 并用 `baseUrl + model` 匹配已保存 provider。匹配成功后自动恢复对应工具的 Active provider。
 
-开发阶段默认 `<effective-home>` 是 workspace 下的 `.vsmodelswitch-home`。只有 `vsmodelswitch.configTarget = real` 时才使用真实用户 home。
+默认 `<effective-home>` 是真实用户 home。设置 `vsmodelswitch.configTarget = sandbox` 后才使用 workspace 下的 `.vsmodelswitch-home`。
 
 已经运行的 Claude Code 和 Codex 进程不能无感热切。插件只保证：
 
@@ -245,8 +245,8 @@ Use Provider
 
 - Claude Code adapter 写入 `<effective-home>/.claude/settings.json`。
 - Codex adapter 写入 `<effective-home>/.codex/config.toml`。
-- 默认 `<effective-home>` 是 sandbox。
-- 设置 `vsmodelswitch.configTarget = real` 后才写真实 home。
+- 默认 `<effective-home>` 是真实用户 home。
+- 设置 `vsmodelswitch.configTarget = sandbox` 后写入测试 home。
 - 写入前备份。
 - 只改插件负责的字段。
 

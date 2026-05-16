@@ -121,7 +121,7 @@ export class VSModelSwitchApp implements vscode.Disposable {
       currentProviderIds: this.store.getCurrentProviderIds(),
       status: this.status,
       globalCliSync: vscode.workspace.getConfiguration('vsmodelswitch').get<boolean>('globalCliSync', true),
-      configTarget: vscode.workspace.getConfiguration('vsmodelswitch').get<string>('configTarget', 'sandbox'),
+      configTarget: vscode.workspace.getConfiguration('vsmodelswitch').get<string>('configTarget', 'real'),
       configPaths: {
         claude: this.claudeAdapter.getConfigPath(),
         codex: this.codexAdapter.getConfigPath()

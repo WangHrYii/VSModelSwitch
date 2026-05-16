@@ -85,7 +85,7 @@ Expected result:
 - The row-level `Model` button fetches models for that provider and lets you choose a new model.
 - `Config` is a tool-level button next to the Claude Code / Codex section header.
 - The VSCode status bar shows separate Claude and Codex entries with provider/model.
-- If the sandbox config file is edited externally, the status bar should update after the file watcher fires.
+- If the active config file is edited externally, the status bar should update after the file watcher fires.
 
 To validate synced-provider behavior:
 
@@ -95,9 +95,8 @@ To validate synced-provider behavior:
 4. Click `Set Key`.
 5. Enter `test-key`.
 6. `Apply` and `Model` should become available again.
-- Global config sync is enabled by default, but writes to sandbox by default.
-- The default sandbox path is `<workspace>/.vsmodelswitch-home`.
-- Real `~/.claude` and `~/.codex` are not touched unless `vsmodelswitch.configTarget` is set to `real`.
+- Global config sync is enabled by default and writes to real config files by default.
+- Set `vsmodelswitch.configTarget` to `sandbox` before testing if you do not want to touch real `~/.claude` and `~/.codex`.
 
 The Command Palette commands still work, but the side bar UI is the primary flow.
 
@@ -174,15 +173,16 @@ The command also sends `claude` or `codex` automatically. For pure env testing, 
 By default, config files are written under:
 
 ```text
-<workspace>/.vsmodelswitch-home/.claude/settings.json
-<workspace>/.vsmodelswitch-home/.codex/config.toml
+~/.claude/settings.json
+~/.codex/config.toml
 ```
 
-To use a custom sandbox path, set workspace settings in the Extension Development Host:
+To use sandbox mode, set workspace settings in the Extension Development Host:
 
 ```json
 {
   "vsmodelswitch.globalCliSync": true,
+  "vsmodelswitch.configTarget": "sandbox",
   "vsmodelswitch.testHome": "/tmp/vsmodelswitch-home"
 }
 ```
@@ -200,11 +200,11 @@ Expected files:
 /tmp/vsmodelswitch-home/.codex/config.toml
 ```
 
-No real files under your actual home directory should be touched.
+No real files under your actual home directory should be touched in sandbox mode.
 
 You can also click `Config` in each provider group to open the generated file directly.
 
-Only set this after you are ready to write real machine config:
+Use this default setting when you are ready to write real machine config:
 
 ```json
 {
