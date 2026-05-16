@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Build outputs
+out/
+dist/
+*.vsix
+*.map
+
+# Local sandbox config written by the extension
+.vsmodelswitch-home/
+
+# Logs and temp files
+*.log
+.DS_Store
+.tmp/
+tmp/
+coverage/
+
+# Local editor and extension host state
+.vscode-test/
+
+# Local agent/task context
+.tasks/
+.claude-summary.md
+CLAUDE.md
+
+# Secrets and local config exports
+*.secret.json
+*.local.json
+*.env
+*.env.*

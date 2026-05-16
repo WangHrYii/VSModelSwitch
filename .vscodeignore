@@ -1,0 +1,12 @@
+src/**
+.vscode/**
+.tasks/**
+docs/**
+scripts/**
+tsconfig.json
+CLAUDE.md
+.claude-summary.md
+**/*.map
+node_modules/@types/**
+node_modules/typescript/**
+node_modules/@vscode/test-electron/**
