@@ -2,8 +2,9 @@
   "name": "vsmodelswitch",
   "displayName": "VSModelSwitch",
   "description": "AI CLI provider switcher for Claude Code and Codex in VSCode.",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "publisher": "wanghryii",
+  "icon": "media/switch_889728.png",
   "license": "MIT",
   "repository": {
     "type": "git",
