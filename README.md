@@ -6,6 +6,12 @@ English | [简体中文](README.zh-CN.md)
 
 VSModelSwitch is a VSCode extension for managing Claude Code and Codex providers, API endpoints, API keys, and models from a side-bar UI. It is built for AI coding users who frequently switch between API gateways, model vendors, proxies, and local test environments.
 
+Marketplace: [VSModelSwitch](https://marketplace.visualstudio.com/items?itemName=wanghryii.vsmodelswitch)
+
+<p align="center">
+  <img src="media/poster.png" alt="VSModelSwitch poster" width="720">
+</p>
+
 ## Features
 
 - Manage Claude Code and Codex providers separately

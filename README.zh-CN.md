@@ -6,6 +6,12 @@
 
 VSModelSwitch 是一个 VSCode 插件，用来在 VSCode 内管理 Claude Code 和 Codex 的 provider、URL、API key 和模型。它适合经常在不同 API 网关、模型供应商、代理服务和本地测试环境之间切换的 AI 编程用户。
 
+插件市场：[VSModelSwitch](https://marketplace.visualstudio.com/items?itemName=wanghryii.vsmodelswitch)
+
+<p align="center">
+  <img src="media/poster.png" alt="VSModelSwitch 海报" width="720">
+</p>
+
 ## 功能
 
 - 分别管理 Claude Code 和 Codex provider
@@ -101,7 +107,7 @@ npm run package
 会生成：
 
 ```text
-vsmodelswitch-0.0.1.vsix
+vsmodelswitch-0.1.0.vsix
 ```
 
 ## 配置项
